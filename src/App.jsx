@@ -8,6 +8,7 @@ import { useAuth } from './store/AuthProvider';
 import { Toaster } from 'react-hot-toast';
 import RegisterPage from './pages/RegisterPage';
 import AddShopPage from './pages/AddShopPage';
+import SingleAddPage from './pages/SingleAddPage';
 
 export default function App() {
   const ctx = useAuth();
@@ -21,6 +22,7 @@ export default function App() {
           path='/'
           element={isUserLoggedIn ? <Shops /> : <Navigate to={'/login'} />}
         />
+        <Route path='/adds/:addId' element={<SingleAddPage />} />
 
         <Route
           path='/add-shop'
