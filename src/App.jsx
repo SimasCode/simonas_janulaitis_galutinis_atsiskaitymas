@@ -4,10 +4,10 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import Header from './components/layout/Header';
 import LoginPage from './pages/LoginPage';
 import Shops from './pages/Shops';
-import AddShop from './pages/AddShop';
 import { useAuth } from './store/AuthProvider';
 import { Toaster } from 'react-hot-toast';
 import RegisterPage from './pages/RegisterPage';
+import AddShopPage from './pages/AddShopPage';
 
 export default function App() {
   const ctx = useAuth();
@@ -24,7 +24,9 @@ export default function App() {
 
         <Route
           path='/add-shop'
-          element={isUserLoggedIn ? <AddShop /> : <Navigate to={'/login'} />}
+          element={
+            isUserLoggedIn ? <AddShopPage /> : <Navigate to={'/login'} />
+          }
         />
 
         <Route
