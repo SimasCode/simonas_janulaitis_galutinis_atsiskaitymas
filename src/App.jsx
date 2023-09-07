@@ -17,9 +17,18 @@ export default function App() {
       <Toaster />
       <Header />
       <Routes>
-        <Route path='/' element={<Shops />} />
-        <Route path='/add-shop' element={<AddShop />} />
-        <Route path='/register' element={<Register />} />
+        <Route
+          path='/'
+          element={isUserLoggedIn ? <Shops /> : <Navigate to={'/login'} />}
+        />
+        <Route
+          path='/add-shop'
+          element={isUserLoggedIn ? <AddShop /> : <Navigate to={'/login'} />}
+        />
+        <Route
+          path='/register'
+          element={isUserLoggedIn ? <Register /> : <Navigate to={'/login'} />}
+        />
 
         <Route
           path='/login'

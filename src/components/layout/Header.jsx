@@ -3,8 +3,11 @@ import './header.scss';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase/firebase';
 import { toast } from 'react-hot-toast';
+import { useAuth } from '../../store/AuthProvider';
 
 export default function Header() {
+  const ctx = useAuth();
+  const { isUserLoggedIn } = ctx;
   function logout() {
     signOut(auth).then(() => {
       // Sign-out successful.
@@ -20,24 +23,35 @@ export default function Header() {
       <div className='container'>
         <Link className='headerLogo'>LOGO</Link>
         <nav>
-          <NavLink className={'navLink'} to={'/'}>
-            Shops
-          </NavLink>
-          <NavLink className={'navLink'} to={'/add-shop'}>
-            Add Shop
-          </NavLink>
+          {isUserLoggedIn && (
+            <NavLink className={'navLink'} to={'/'}>
+              Shops
+            </NavLink>
+          )}
 
-          <NavLink className={'navLink'} to={'/register'}>
-            Register
-          </NavLink>
+          {isUserLoggedIn && (
+            <NavLink className={'navLink'} to={'/add-shop'}>
+              Add Shop
+            </NavLink>
+          )}
 
-          <NavLink className={'navLink'} to={'/login'}>
-            Login
-          </NavLink>
+          {isUserLoggedIn && (
+            <NavLink className={'navLink'} to={'/register'}>
+              Register
+            </NavLink>
+          )}
 
-          <NavLink onClick={logout} className={'navLink'} to={'/login'}>
-            Logout
-          </NavLink>
+          {!isUserLoggedIn && (
+            <NavLink className={'navLink'} to={'/login'}>
+              Login
+            </NavLink>
+          )}
+
+          {isUserLoggedIn && (
+            <NavLink onClick={logout} className={'navLink'} to={'/login'}>
+              Logout
+            </NavLink>
+          )}
         </nav>
       </div>
     </header>
