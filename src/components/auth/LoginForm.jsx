@@ -10,8 +10,11 @@ export default function LoginForm() {
       password: '123456',
     },
     validationSchema: Yup.object({
-      email: Yup.string().email().required(),
-      password: Yup.string().min(4).max(255).required(),
+      email: Yup.string().email().required('This field is required.'),
+      password: Yup.string()
+        .min(4)
+        .max(255)
+        .required('This field is required.'),
     }),
     onSubmit: (values) => {
       console.log('supildytos reiksmes ===', values);
