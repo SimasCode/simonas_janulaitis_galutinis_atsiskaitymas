@@ -1,13 +1,16 @@
 import './reset.scss';
 import './App.scss';
-import { Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Header from './components/layout/Header';
+import LoginPage from './pages/LoginPage';
 
 export default function App() {
   return (
     <div>
       <Header />
-      <Routes></Routes>
+      <Routes>
+        <Route path='/login' element={<LoginPage />} />
+      </Routes>
     </div>
   );
 }
