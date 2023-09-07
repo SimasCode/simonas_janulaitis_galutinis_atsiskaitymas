@@ -1,7 +1,20 @@
 import { Link, NavLink } from 'react-router-dom';
 import './header.scss';
+import { signOut } from 'firebase/auth';
+import { auth } from '../../firebase/firebase';
+import { toast } from 'react-hot-toast';
 
 export default function Header() {
+  function logout() {
+    signOut(auth).then(() => {
+      // Sign-out successful.
+    });
+    toast.success('You loggout successfully').catch((error) => {
+      // An error happened.
+      console.log('Header - error ===', error);
+    });
+  }
+
   return (
     <header className='header'>
       <div className='container'>
@@ -22,7 +35,7 @@ export default function Header() {
             Login
           </NavLink>
 
-          <NavLink className={'navLink'} to={'/login'}>
+          <NavLink onClick={logout} className={'navLink'} to={'/login'}>
             Logout
           </NavLink>
         </nav>
