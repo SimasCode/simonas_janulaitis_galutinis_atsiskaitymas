@@ -35,7 +35,7 @@ export default function Header() {
             </NavLink>
           )}
 
-          {isUserLoggedIn && (
+          {!isUserLoggedIn && (
             <NavLink className={'navLink'} to={'/register'}>
               Register
             </NavLink>
