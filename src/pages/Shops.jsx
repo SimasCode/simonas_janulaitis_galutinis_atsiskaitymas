@@ -5,6 +5,7 @@ import AddCardList from './AddCardList';
 
 export default function Shops() {
   const [localArr, setLocalArr] = useState([]);
+  const [searchValue, setSearchValue] = useState('');
   console.log('localArr ===', localArr);
 
   async function getDataFromFirestore() {
@@ -41,11 +42,38 @@ export default function Shops() {
     }
   }
 
+  function searchInput(event) {
+    setSearchValue(event.target.value);
+    console.log('searchValue ===', searchValue);
+  }
+
+  /**
+   *
+   * @param {SubmitEvent} event
+   */
+
+  function handleSearch(event) {
+    event.preventDefault();
+  }
+
+  const filteredArr = localArr.filter((item) =>
+    item.shopName.toLowerCase().includes(searchValue)
+  );
+
   return (
     <div className='container'>
       <h1 className=''>HomePage</h1>
       <p>Welcome to our adds</p>
-      <AddCardList item={localArr} onDelete={handleDelete} />
+      <form onSubmit={handleSearch}>
+        <input
+          onChange={searchInput}
+          value={searchValue}
+          type='text'
+          placeholder='Search...'
+        />
+        <button type='submit'>Search</button>
+      </form>
+      <AddCardList item={filteredArr} onDelete={handleDelete} />
     </div>
   );
 }
