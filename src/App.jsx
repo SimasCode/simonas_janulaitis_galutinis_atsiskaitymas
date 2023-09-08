@@ -9,6 +9,9 @@ import { Toaster } from 'react-hot-toast';
 import RegisterPage from './pages/RegisterPage';
 import AddShopPage from './pages/AddShopPage';
 import SingleAddPage from './pages/SingleAddPage';
+import NotFoundPage from './pages/NotFoundPage';
+import Footer from './components/layout/Footer';
+import Feature from './components/layout/Feature';
 
 export default function App() {
   const ctx = useAuth();
@@ -17,6 +20,7 @@ export default function App() {
     <div>
       <Toaster />
       <Header />
+
       <Routes>
         <Route
           path='/'
@@ -42,7 +46,10 @@ export default function App() {
           path='/login'
           element={isUserLoggedIn ? <Navigate to={'/'} /> : <LoginPage />}
         />
+        <Route path='*' element={<NotFoundPage />} />
       </Routes>
+      <Feature />
+      <Footer />
     </div>
   );
 }
