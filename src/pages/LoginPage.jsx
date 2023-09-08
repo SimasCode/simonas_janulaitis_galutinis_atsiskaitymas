@@ -1,14 +1,10 @@
-import GoogleLogin from '../components/auth/GoogleLogin';
 import LoginForm from '../components/auth/LoginForm';
+import './loginPage.scss';
 
 export default function LoginPage() {
   return (
-    <div className='container'>
-      <h1>LoginPage</h1>
-      <hr />
+    <div className='container login-page-container'>
       <LoginForm />
-      <hr />
-      <GoogleLogin />
     </div>
   );
 }

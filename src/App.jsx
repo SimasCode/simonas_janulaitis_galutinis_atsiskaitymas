@@ -11,7 +11,6 @@ import AddShopPage from './pages/AddShopPage';
 import SingleAddPage from './pages/SingleAddPage';
 import NotFoundPage from './pages/NotFoundPage';
 import Footer from './components/layout/Footer';
-import Hero from './components/layout/Hero';
 import MyAccountPage from './pages/MyAccountPage';
 
 export default function App() {

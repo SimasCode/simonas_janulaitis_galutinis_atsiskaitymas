@@ -1,7 +1,8 @@
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import { googleProvider } from '../../firebase/firebase';
+import { BiLogoGoogle } from 'react-icons/bi';
 
-export default function GoogleLogin() {
+export default function GoogleLogin(props) {
   function authWithGoogle() {
     const auth = getAuth();
     signInWithPopup(auth, googleProvider)
@@ -31,9 +32,9 @@ export default function GoogleLogin() {
   }
 
   return (
-    <div>
-      <h2>Login with google</h2>
-      <button onClick={authWithGoogle}>Google Login</button>
-    </div>
+    <button onClick={authWithGoogle} className={props.className}>
+      <BiLogoGoogle />
+      Google
+    </button>
   );
 }
