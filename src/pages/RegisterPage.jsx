@@ -3,8 +3,11 @@ import { useFormik } from 'formik';
 import './registerPage.scss';
 import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
 import { toast } from 'react-hot-toast';
+import { useState } from 'react';
 
 export default function RegisterPage() {
+  const [errorMessage, setErrorMessage] = useState('');
+
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -12,15 +15,18 @@ export default function RegisterPage() {
       repeatPassword: '',
     },
     validationSchema: Yup.object({
-      email: Yup.string().trim().email().required('Privaloma'),
+      email: Yup.string()
+        .trim()
+        .email('This is not a valid email format')
+        .required('Required Field.'),
       password: Yup.string()
         .trim()
-        .min(4, 'Minimum 4 simboliai')
-        .required('Privaloma'),
+        .min(4, 'At least 4 characters')
+        .required('Required Field.'),
       repeatPassword: Yup.string()
         .trim()
-        .min(4, 'Minimum 4 simboliai')
-        .required('Repeat privalomas'),
+        .min(4, 'At least 4 characters')
+        .required('Required Field.'),
     }),
     onSubmit: (values) => {
       console.log('values ===', values);
@@ -32,11 +38,11 @@ export default function RegisterPage() {
     console.log('userCredential ===', userCredential);
 
     if (formik.values.password !== formik.values.repeatPassword) {
-      console.log('Slaptazodis NEsutampa');
-      return;
+      console.log('Password dont match');
+      return setErrorMessage('Your password dont match.');
     } else {
       createNewUsers(userCredential.email, userCredential.password);
-      console.log('slaptazodis sutampa');
+      console.log('Password is good');
     }
   }
 
@@ -55,44 +61,54 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className='container'>
-      <form className='form' onSubmit={formik.handleSubmit}>
-        <label htmlFor='email'> Enter Email:</label>
+    <div className='container register-container'>
+      <h3 className='register-title'>Register</h3>
+      <form className='register-form' onSubmit={formik.handleSubmit}>
         <input
+          className='register-input'
           onChange={formik.handleChange}
           value={formik.values.email}
           onBlur={formik.handleBlur}
           type='text'
           id='email'
+          placeholder='Email'
         />
+
         {formik.errors.email && formik.touched.email && (
-          <p>{formik.errors.email}</p>
+          <p className='register-error'>{formik.errors.email}</p>
         )}
 
-        <label htmlFor='password'> Enter Password:</label>
         <input
+          className='register-input'
           onChange={formik.handleChange}
           value={formik.values.password}
           onBlur={formik.handleBlur}
           type='password'
           id='password'
+          placeholder='Password'
         />
+
         {formik.errors.password && formik.touched.password && (
-          <p>{formik.errors.password}</p>
+          <p className='register-error'>{formik.errors.password}</p>
         )}
 
-        <label htmlFor='repeatPassword'>Repeat Password:</label>
         <input
+          className='register-input'
           onChange={formik.handleChange}
           value={formik.values.repeatPassword}
           onBlur={formik.handleBlur}
           type='password'
           id='repeatPassword'
+          placeholder='Repeat password'
         />
+
         {formik.errors.repeatPassword && formik.touched.repeatPassword && (
-          <p>{formik.errors.repeatPassword}</p>
+          <p className='register-error'>{formik.errors.repeatPassword}</p>
         )}
-        <button type='submit'>Register</button>
+        <p className='register-error'>{errorMessage}</p>
+        <button className='register-button' type='submit'>
+          Register
+        </button>
       </form>
     </div>
   );

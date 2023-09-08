@@ -29,4 +29,9 @@
         border-radius: 4px;
         padding: 16px 32px;
     }
+
+    .not-link:hover{
+        color: var(--gold);
+        border: 1px solid var(--gold);
+    }
 }

@@ -58,7 +58,7 @@ export default function LoginForm() {
           placeholder='Email'
         />
         {formik.errors.email && formik.touched.email && (
-          <p className='login-request'>{formik.errors.email}</p>
+          <p className='login-error'>{formik.errors.email}</p>
         )}
 
         <input
@@ -71,7 +71,7 @@ export default function LoginForm() {
           placeholder='Password'
         />
         {formik.errors.password && formik.touched.password && (
-          <p className='login-request'>{formik.errors.password}</p>
+          <p className='login-error'>{formik.errors.password}</p>
         )}
 
         <button className='login-button' type='submit'>
