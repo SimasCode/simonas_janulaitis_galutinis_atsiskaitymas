@@ -1,23 +1,28 @@
-.header {
-    background-color: #333;
-    color: #fff;
-    .headerLogo {
-      font-size: 30px;
-      padding: 10px 0;
+.header {   
+  color: var(--black);
+    .header-logo {
+      font-size: 30px;      
       text-decoration: none;
-      color: white;
+      color: var(--black);
     }
+
+    .header-logo-block{
+      color: var(--gold);
+    }
+
     .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+
     .navLink {
       padding: 0.3em 1em;
       display: inline-block;
-      color: white;
+      color: var(--black);
       text-decoration: none;
     }
+
     .navLink:hover {
       background-color: #484848;
     }

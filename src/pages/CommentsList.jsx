@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import '../style/commentList.scss';
 import { collection, getDocs, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 import { useParams } from 'react-router-dom';

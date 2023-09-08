@@ -13,6 +13,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import Footer from './components/layout/Footer';
 import Feature from './components/layout/Feature';
 import Hero from './components/layout/Hero';
+import MyAccountPage from './pages/MyAccountPage';
 
 export default function App() {
   const ctx = useAuth();
@@ -41,6 +42,11 @@ export default function App() {
           element={
             !isUserLoggedIn ? <RegisterPage /> : <Navigate to={'/login'} />
           }
+        />
+
+        <Route
+          path='/my-account-page'
+          element={isUserLoggedIn ? <MyAccountPage /> : <LoginPage />}
         />
 
         <Route

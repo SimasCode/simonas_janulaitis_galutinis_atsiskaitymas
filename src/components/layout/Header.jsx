@@ -4,6 +4,7 @@ import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase/firebase';
 import { toast } from 'react-hot-toast';
 import { useAuth } from '../../store/AuthProvider';
+import { VscAccount } from 'react-icons/vsc';
 
 export default function Header() {
   const ctx = useAuth();
@@ -21,7 +22,9 @@ export default function Header() {
   return (
     <header className='header'>
       <div className='container'>
-        <Link className='headerLogo'>LOGO</Link>
+        <Link className='header-logo'>
+          <span className='header-logo-block'>SHOPPY</span>.COM
+        </Link>
         <nav>
           {isUserLoggedIn && (
             <NavLink className={'navLink'} to={'/'}>
@@ -52,6 +55,10 @@ export default function Header() {
               Logout
             </NavLink>
           )}
+          <span>|</span>
+          <NavLink className={'navLink'} to={'/my-account-page'}>
+            <VscAccount />
+          </NavLink>
         </nav>
       </div>
     </header>
