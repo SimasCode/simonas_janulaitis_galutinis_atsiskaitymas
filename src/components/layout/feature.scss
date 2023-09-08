@@ -1,5 +1,5 @@
 
-.featureContainer {
+.feature-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);     
     gap: 20px;  
@@ -7,13 +7,13 @@
     border: 1px solid #000;
     margin: 50px 50px;   
     
-    .featureTitle {
+    .feature-title {
         font-size: 18px;
         color: var(--black);
         font-weight: 600;
     }
 
-    .featureText {
+    .feature-text {
         font-size: 16px;
         color: var(--gray);
         font-weight: 500;
@@ -21,23 +21,20 @@
 }
 
 @media screen and (min-width: 1024px) {
-    .featureContainer {
+    .feature-container {
         display: grid;    
         grid-template-columns: repeat(4, 1fr);       
         max-width: 1400px;  
         margin-right: 100px;
         margin-left: 100px;  
 
-        .featureBlock {
+        .feature-block {
             display: flex;
             gap: 20px;
             justify-items: center;
             align-items: center;
         }
-        // .featureTextContainer{
-        //     display: flex;
-        //     flex-direction: column;
-        // }
+       
            
     }
 }
