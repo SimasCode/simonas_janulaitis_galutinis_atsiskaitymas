@@ -12,6 +12,7 @@ import SingleAddPage from './pages/SingleAddPage';
 import NotFoundPage from './pages/NotFoundPage';
 import Footer from './components/layout/Footer';
 import Feature from './components/layout/Feature';
+import Hero from './components/layout/Hero';
 
 export default function App() {
   const ctx = useAuth();
@@ -20,7 +21,7 @@ export default function App() {
     <div>
       <Toaster />
       <Header />
-
+      <Hero />
       <Routes>
         <Route
           path='/'
