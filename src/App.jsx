@@ -11,18 +11,17 @@ import AddShopPage from './pages/AddShopPage';
 import SingleAddPage from './pages/SingleAddPage';
 import NotFoundPage from './pages/NotFoundPage';
 import Footer from './components/layout/Footer';
-import Feature from './components/layout/Feature';
 import Hero from './components/layout/Hero';
 import MyAccountPage from './pages/MyAccountPage';
 
 export default function App() {
   const ctx = useAuth();
   const { isUserLoggedIn } = ctx;
+
   return (
     <div>
       <Toaster />
       <Header />
-      <Hero />
       <Routes>
         <Route
           path='/'
@@ -55,7 +54,7 @@ export default function App() {
         />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
-      <Feature />
+
       <Footer />
     </div>
   );

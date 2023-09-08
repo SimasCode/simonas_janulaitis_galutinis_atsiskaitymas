@@ -2,6 +2,8 @@ import { collection, deleteDoc, doc, getDocs } from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 import { useEffect, useState } from 'react';
 import AddCardList from './AddCardList';
+import Feature from '../components/layout/Feature';
+import Hero from '../components/layout/Hero';
 
 export default function Shops() {
   const [localArr, setLocalArr] = useState([]);
@@ -62,7 +64,7 @@ export default function Shops() {
 
   return (
     <div className='container'>
-      <h1 className=''>HomePage</h1>
+      <Hero />
       <p>Welcome to our adds</p>
       <form onSubmit={handleSearch}>
         <input
@@ -74,6 +76,7 @@ export default function Shops() {
         <button type='submit'>Search</button>
       </form>
       <AddCardList item={filteredArr} onDelete={handleDelete} />
+      <Feature />
     </div>
   );
 }
