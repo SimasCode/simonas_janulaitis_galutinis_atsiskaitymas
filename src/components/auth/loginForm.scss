@@ -28,8 +28,12 @@
       border: none;
       border-bottom: 1px solid var(--gold);
       margin-top: 40px; 
-    }   
-
+    } 
+    
+    input:focus, input:active {        
+      outline: none;    
+   }   
+  
     .login-button {
       width: 100%;
       background-color: var(--black);

@@ -27,6 +27,10 @@
         margin-top: 20px;       
     }
 
+    input:focus, input:active {        
+        outline: none;    
+     } 
+
     .register-button {
         width: 100%;
         background-color: var(--black);

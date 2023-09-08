@@ -14,14 +14,13 @@ export default function LoginForm() {
       password: '',
     },
     validationSchema: Yup.object({
-      email: Yup.string().email().required('This field is required.'),
-      password: Yup.string()
-        .min(4)
-        .max(255)
-        .required('This field is required.'),
+      email: Yup.string()
+        .email('This is not a valid email format')
+        .required('Required Field.'),
+      password: Yup.string().min(4).max(255).required('Required Field.'),
     }),
     onSubmit: (values) => {
-      console.log('supildytos reiksmes ===', values);
+      console.log('Supildytos reiksmes ===', values);
       loginWithFire(values.email, values.password);
     },
   });
