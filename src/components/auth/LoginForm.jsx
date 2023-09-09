@@ -10,8 +10,8 @@ import { NavLink } from 'react-router-dom';
 export default function LoginForm() {
   const formik = useFormik({
     initialValues: {
-      email: '',
-      password: '',
+      email: '', //james@bond.com
+      password: '', // 123456
     },
     validationSchema: Yup.object({
       email: Yup.string()
@@ -76,15 +76,14 @@ export default function LoginForm() {
         <button className='login-button' type='submit'>
           Login
         </button>
-        <div className='login-other-logins'>
-          <GoogleLogin className='login-other-buttons' />
-          <FacebookLogin className='login-other-buttons' />
-        </div>
-        <NavLink className='login-text' to={'/register'}>
-          Have you forgotten your password?
-        </NavLink>
-        <p></p>
       </form>
+      <div className='login-other-logins'>
+        <GoogleLogin className='login-other-buttons' />
+        <FacebookLogin className='login-other-buttons' />
+      </div>
+      <NavLink className='login-text' to={'/register'}>
+        Have you forgotten your password?
+      </NavLink>
     </div>
   );
 }

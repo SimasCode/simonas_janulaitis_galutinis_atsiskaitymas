@@ -20,47 +20,45 @@ export default function Header() {
   }
 
   return (
-    <header className='header'>
-      <div className='container'>
-        <Link className='header-logo'>
-          <span className='header-logo-block'>SHOPPY</span>.COM
-        </Link>
-        <nav>
-          {isUserLoggedIn && (
-            <NavLink className={'navLink'} to={'/'}>
-              Shops
-            </NavLink>
-          )}
-
-          {isUserLoggedIn && (
-            <NavLink className={'navLink'} to={'/add-shop'}>
-              Add Shop
-            </NavLink>
-          )}
-
-          {!isUserLoggedIn && (
-            <NavLink className={'navLink'} to={'/register'}>
-              Register
-            </NavLink>
-          )}
-
-          {!isUserLoggedIn && (
-            <NavLink className={'navLink'} to={'/login'}>
-              Login
-            </NavLink>
-          )}
-
-          {isUserLoggedIn && (
-            <NavLink onClick={logout} className={'navLink'} to={'/login'}>
-              Logout
-            </NavLink>
-          )}
-          <span>|</span>
-          <NavLink className={'navLink'} to={'/my-account-page'}>
-            <VscAccount />
+    <header className='container header-container'>
+      <Link className='header-logo'>
+        <span className='header-logo-block'>SHOPPY</span>.COM
+      </Link>
+      <nav>
+        {isUserLoggedIn && (
+          <NavLink className={'nav-link'} to={'/'}>
+            Shops
           </NavLink>
-        </nav>
-      </div>
+        )}
+
+        {isUserLoggedIn && (
+          <NavLink className={'nav-link'} to={'/add-shop'}>
+            Add Shop
+          </NavLink>
+        )}
+
+        {!isUserLoggedIn && (
+          <NavLink className={'nav-link'} to={'/register'}>
+            Register
+          </NavLink>
+        )}
+
+        {!isUserLoggedIn && (
+          <NavLink className={'nav-link'} to={'/login'}>
+            Login
+          </NavLink>
+        )}
+
+        {isUserLoggedIn && (
+          <NavLink onClick={logout} className={'navLink'} to={'/login'}>
+            Logout
+          </NavLink>
+        )}
+        <span>|</span>
+        <NavLink className={'nav-link'} to={'/my-account-page'}>
+          <VscAccount />
+        </NavLink>
+      </nav>
     </header>
   );
 }

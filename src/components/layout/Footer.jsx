@@ -53,12 +53,15 @@ export default function Footer() {
             </a>
           </div>
           <div className='footer-top-text-container'>
-            <a className='footer-top-title-text'>Social</a>
-            <h2 className='footer-top-text' href='/'>
+            <h2 className='footer-top-title-text'>Social</h2>
+            <a className='footer-top-text' href='https://twitter.com/'>
               Twitter
-            </h2>
-            <a className='footer-top-text' href='/'>
+            </a>
+            <a className='footer-top-text' href='https://www.instagram.com/'>
               Instagram
+            </a>
+            <a className='footer-top-text' href='https://www.facebook.com/'>
+              Facebook
             </a>
           </div>
         </div>

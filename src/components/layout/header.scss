@@ -1,7 +1,12 @@
-.header {   
-  color: var(--black);
+.header-container { 
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+    color: var(--black);
+    margin: 0 100px;
+
     .header-logo {
-      font-size: 30px;      
+      font-size: 35px;      
       text-decoration: none;
       color: var(--black);
     }
@@ -16,8 +21,9 @@
       align-items: center;
     }
 
-    .navLink {
-      padding: 0.3em 1em;
+    .nav-link {
+      padding: 8px 16px;
+      font-size: 16px;
       display: inline-block;
       color: var(--black);
       text-decoration: none;
