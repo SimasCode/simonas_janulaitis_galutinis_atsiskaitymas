@@ -1,7 +1,6 @@
 import './reset.scss';
 import './App.scss';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import Header from './components/layout/Header';
 import LoginPage from './pages/LoginPage';
 import Shops from './pages/Shops';
 import { useAuth } from './store/AuthProvider';
@@ -12,6 +11,7 @@ import SingleAddPage from './pages/SingleAddPage';
 import NotFoundPage from './pages/NotFoundPage';
 import Footer from './components/layout/Footer';
 import MyAccountPage from './pages/MyAccountPage';
+import Header from './components/layout/header/Header';
 
 export default function App() {
   const ctx = useAuth();
