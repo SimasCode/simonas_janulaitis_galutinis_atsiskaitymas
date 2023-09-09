@@ -1,4 +1,23 @@
-.heroTitle {
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px 32px;   
     
-    background-color: tomato;
+
+    .hero-image{
+        height: auto;
+        max-width: 100%;       
+    }
+
+    .hero-title {}
+
+    .hero-subtitle{}
+
+}
+
+@media screen and (min-width:767px) {
+    .hero-container {
+        margin: 50px 100px; 
+    }
 }
