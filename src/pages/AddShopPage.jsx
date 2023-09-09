@@ -4,6 +4,7 @@ import toast from 'react-hot-toast';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 import { useAuth } from '../store/AuthProvider';
+import './addShopPage.scss';
 
 export default function AddShopPage() {
   const ctx = useAuth();
@@ -59,87 +60,82 @@ export default function AddShopPage() {
   }
 
   return (
-    <div className='container'>
-      <form onSubmit={formik.handleSubmit} className=''>
+    <div className='container add-container'>
+      <h1 className='add-title'>Add shop</h1>
+      <form className='add-form' onSubmit={formik.handleSubmit}>
         {/* SHOP NAME */}
-        <div className=''>
-          <input
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.shopName}
-            className=''
-            type='text'
-            id='shopName'
-            placeholder='Shop name'
-          />
-          {formik.errors.shopName && formik.touched.shopName && (
-            <p className=''>{formik.errors.shopName}</p>
-          )}
-        </div>
-        {/* TOWN */}
-        <div className=''>
-          <input
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.town}
-            className=''
-            type='text'
-            id='town'
-            placeholder='Town'
-          />
-          {formik.errors.town && formik.touched.town && (
-            <p className=''>{formik.errors.town}</p>
-          )}
-        </div>
-        {/* START YEAR */}
-        <div className=''>
-          <input
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.startYear}
-            className=''
-            type='number'
-            id='startYear'
-            placeholder='Start year'
-          />
-          {formik.errors.startYear && formik.touched.startYear && (
-            <p className=''>{formik.errors.startYear}</p>
-          )}
-        </div>
+        <input
+          className='add-input'
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.shopName}
+          type='text'
+          id='shopName'
+          placeholder='Shop name'
+        />
+        {formik.errors.shopName && formik.touched.shopName && (
+          <p className='add-error'>{formik.errors.shopName}</p>
+        )}
 
-        {/* DESCRIPTION */}
-        <div>
-          <textarea
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.description}
-            className=''
-            id='description'
-            placeholder='Description'
-          />
-          {formik.errors.description && formik.touched.description && (
-            <p className=''>{formik.errors.description}</p>
-          )}
-        </div>
+        {/* TOWN */}
+        <input
+          className='add-input'
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.town}
+          type='text'
+          id='town'
+          placeholder='Town'
+        />
+        {formik.errors.town && formik.touched.town && (
+          <p className='add-error'>{formik.errors.town}</p>
+        )}
+
+        {/* START YEAR */}
+        <input
+          className='add-input'
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.startYear}
+          type='number'
+          id='startYear'
+          placeholder='Start year'
+        />
+        {formik.errors.startYear && formik.touched.startYear && (
+          <p className='add-error'>{formik.errors.startYear}</p>
+        )}
 
         {/* ImageURL */}
-        <div>
-          <input
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.imageUrl}
-            className=''
-            type='text'
-            id='imageUrl'
-            placeholder='Image URL'
-          />
-          {formik.errors.imageUrl && formik.touched.imageUrl && (
-            <p className=''>{formik.errors.imageUrl}</p>
-          )}
-        </div>
+        <input
+          className='add-input'
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.imageUrl}
+          type='text'
+          id='imageUrl'
+          placeholder='Image URL'
+        />
+        {formik.errors.imageUrl && formik.touched.imageUrl && (
+          <p className='add-error'>{formik.errors.imageUrl}</p>
+        )}
 
-        <button className='' type='submit'>
-          Login
+        {/* DESCRIPTION */}
+        <textarea
+          className='add-input add-text-area'
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.description}
+          id='description'
+          placeholder='Place shop description...'
+          rows='4'
+          cols='50'
+        />
+        {formik.errors.description && formik.touched.description && (
+          <p className='add-error'>{formik.errors.description}</p>
+        )}
+
+        <button className='add-button' type='submit'>
+          Place shop
         </button>
       </form>
     </div>
