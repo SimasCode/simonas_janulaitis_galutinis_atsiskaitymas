@@ -16,7 +16,7 @@ export default function AddShopPage() {
       town: '',
       startYear: '',
       description: '',
-      imageUrl: 'https://i.dummyjson.com/data/products/1/thumbnail.jpg',
+      imageUrl: 'https://picsum.photos/id/20/300/300',
     },
     validationSchema: Yup.object({
       shopName: Yup.string()
@@ -60,7 +60,7 @@ export default function AddShopPage() {
   }
 
   return (
-    <div className='container add-container'>
+    <div className='add-container'>
       <h1 className='add-title'>Add shop</h1>
       <form className='add-form' onSubmit={formik.handleSubmit}>
         {/* SHOP NAME */}

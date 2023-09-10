@@ -4,6 +4,7 @@ import './registerPage.scss';
 import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
 import { toast } from 'react-hot-toast';
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 export default function RegisterPage() {
   const [errorMessage, setErrorMessage] = useState('');
@@ -61,7 +62,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className='container register-container'>
+    <div className='register-container'>
       <h3 className='register-title'>Register</h3>
       <form className='register-form' onSubmit={formik.handleSubmit}>
         <input
@@ -109,6 +110,12 @@ export default function RegisterPage() {
         <button className='register-button' type='submit'>
           Register
         </button>
+        <p className='register-acc'>
+          Already have account?{' '}
+          <NavLink className='register-acc-now' to={'/login'}>
+            Login now
+          </NavLink>
+        </p>
       </form>
     </div>
   );

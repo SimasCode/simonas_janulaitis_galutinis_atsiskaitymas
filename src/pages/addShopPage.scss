@@ -1,14 +1,12 @@
 .add-container {
    width: 300px;
-   margin-top: 50px;
-   margin-bottom: 50px;
+   margin: 50px auto;  
    text-align: center;
 
    .add-title {
     color: var(--black);
     font-size: 30px;
-    font-weight: 500;
-    margin-bottom: 40px;
+    font-weight: 500;    
     }
 
     .add-form{
@@ -49,8 +47,7 @@
         font-size: 16px;  
         text-transform: uppercase;
         border: none; 
-        cursor: pointer;      
-        margin:20px 0;
+        cursor: pointer;       
         letter-spacing: 1px;
         margin-top: 60px;  
       }

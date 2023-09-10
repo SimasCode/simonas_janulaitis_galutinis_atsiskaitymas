@@ -1,14 +1,13 @@
-.register-container {
-    width: 500px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+.register-container {    
+    width: 300px;
+    margin: 50px auto;   
 
     .register-title {        
         color: var(--black);
         text-align: center;
         font-weight: 500;       
         font-size: 30px;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
     }
 
     .register-form {
@@ -53,6 +52,24 @@
         color: var(--red);  
         margin-top: -15px;      
     }
+
+    .register-acc {
+        text-align: center;             
+    }
+
+    .register-acc-now {
+        color: var(--gold);        
+        text-decoration: none;
+    }
+
+    .register-acc-now:hover {
+        color: var(--gray);
+    }
 }
 
+@media (min-width:767px) {
+    .register-container {
+        width: 500px; 
+    }
+}
 

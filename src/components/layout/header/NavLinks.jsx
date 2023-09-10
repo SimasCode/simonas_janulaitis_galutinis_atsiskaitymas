@@ -29,7 +29,7 @@ export default function NavLinks(props) {
   }
 
   return (
-    <nav className='kazkas'>
+    <nav className='nav-link-container'>
       {isUserLoggedIn && (
         <NavLink
           onClick={() => props.isMobile && props.closeMobileMenu()}
@@ -79,10 +79,13 @@ export default function NavLinks(props) {
           Logout
         </NavLink>
       )}
-      <span>|</span>
-      <NavLink className={'nav-link'} to={'/my-account-page'}>
-        <VscAccount />
-      </NavLink>
+      {isUserLoggedIn && <span className='nav-link-fragment'>|</span>}
+      {isUserLoggedIn && <hr className='nav-line' />}
+      {isUserLoggedIn && (
+        <NavLink className={'nav-link nav-link-last'} to={'/my-account-page'}>
+          <VscAccount /> <p className='nav-link-text-fragment'>My account</p>
+        </NavLink>
+      )}
     </nav>
   );
 }

@@ -1,7 +1,7 @@
 *{font-family: 'DM Sans', sans-serif;}
 
 .login-container {
-  width: 500px;  
+  width: 300px;  
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -16,8 +16,7 @@
     }
 
     .login-form {
-      width: 100%;
-      
+      width: 100%;      
     }
 
     .login-input {
@@ -43,10 +42,10 @@
       font-size: 16px;  
       text-transform: uppercase;
       border: none; 
-      cursor: pointer;      
-      margin:20px 0;
+      cursor: pointer;       
       letter-spacing: 1px;
-      margin-top: 60px;  
+      margin-top: 60px; 
+      margin-bottom: 20px; 
     }
 
     .login-button:hover {
@@ -81,18 +80,7 @@
 
     .login-other-buttons:hover {
       background-color: var(--gold);
-    }
-
-    .login-text {
-      color: var(--black);
-      margin-bottom: 20px;
-      font-size: 16px;
-      text-decoration: none;
-    } 
-
-    .login-text:hover {
-      color: var(--gold);
-    }
+    }    
 
     .login-error {
       color: var(--red);  
@@ -100,5 +88,26 @@
       margin-top: 10px;   
     }
 
+    .login-acc {
+      color: var(--black);
+      margin-bottom: 20px;
+      font-size: 16px;
+      text-decoration: none;
+    } 
+
+    .login-acc-now {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .login-acc-now:hover {
+      color: var(--gray);
+  }
+   
 }
 
+@media (min-width:767px) {
+  .login-container {
+      width: 500px; 
+  }
+}
