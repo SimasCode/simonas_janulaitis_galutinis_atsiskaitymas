@@ -3,7 +3,7 @@ import { BsFacebook, BsTwitter, BsInstagram, BsTiktok } from 'react-icons/bs';
 
 export default function Footer() {
   return (
-    <div className='container footer-container'>
+    <div className='footer-container'>
       {/* Footer top container */}
       <div className='footer-top'>
         <div className='footer-top-first-container'>

@@ -9,7 +9,7 @@ import RegisterPage from './pages/RegisterPage';
 import AddShopPage from './pages/AddShopPage';
 import SingleAddPage from './pages/SingleAddPage';
 import NotFoundPage from './pages/NotFoundPage';
-import Footer from './components/layout/Footer';
+import Footer from './components/layout/footer/Footer';
 import MyAccountPage from './pages/MyAccountPage';
 import Header from './components/layout/header/Header';
 
