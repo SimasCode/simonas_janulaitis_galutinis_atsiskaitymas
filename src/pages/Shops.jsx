@@ -2,15 +2,22 @@ import { collection, deleteDoc, doc, getDocs } from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 import { useEffect, useState } from 'react';
 import AddCardList from './AddCardList';
-import Feature from '../components/layout/Feature';
-import Hero from '../components/layout/Hero';
+import Feature from '../components/layout/feature/Feature';
+import Hero from '../components/layout/hero/Hero';
+import './shops.scss';
+import { toast } from 'react-hot-toast';
+import { ClipLoader } from 'react-spinners';
 
 export default function Shops() {
   const [localArr, setLocalArr] = useState([]);
   const [searchValue, setSearchValue] = useState('');
+  const [loading, setLoading] = useState(false);
   console.log('localArr ===', localArr);
 
+  const isEmpty = !!localArr.length;
+
   async function getDataFromFirestore() {
+    setLoading(true);
     try {
       const querySnapshot = await getDocs(collection(db, 'adds'));
 
@@ -22,26 +29,34 @@ export default function Shops() {
           ...doc.data(),
         });
       });
+
       setLocalArr(getProductsData);
+      // setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
     } catch (error) {
       console.log('getDataFromFirestore error ===', error);
     }
   }
 
   useEffect(() => {
+    // setTimeout(() => {
+    //   setLoading(false);
+    // }, 3000);
     getDataFromFirestore();
   }, []);
 
   async function handleDelete(idToDelete) {
-    console.log('idToDelete ===', idToDelete);
-    try {
-      await deleteDoc(doc(db, 'add', idToDelete));
-      console.log('idToDelete ===', idToDelete);
-      const filtered = localArr.filter((pObj) => pObj.id !== idToDelete);
-      setLocalArr(filtered);
-    } catch (error) {
-      console.log('error ===', error);
-    }
+    deleteDoc(doc(db, 'adds', idToDelete))
+      .then(() => {
+        toast.success('Shop deleted successfully');
+        getDataFromFirestore();
+      })
+      .catch((error) => {
+        console.warn('ivyko klaida:', error);
+        toast.error('Something went wrong');
+      });
   }
 
   function searchInput(event) {
@@ -49,33 +64,49 @@ export default function Shops() {
     console.log('searchValue ===', searchValue);
   }
 
-  /**
-   *
-   * @param {SubmitEvent} event
-   */
-
-  function handleSearch(event) {
-    event.preventDefault();
-  }
-
   const filteredArr = localArr.filter((item) =>
     item.shopName.toLowerCase().includes(searchValue)
   );
 
+  const override = {
+    display: 'flex',
+    margin: '50px auto',
+  };
+
   return (
-    <div className='container'>
+    <div className='shop-container'>
       <Hero />
-      <p>Welcome to our adds</p>
-      <form onSubmit={handleSearch}>
+      <h2 className='shop-title'>OUR SHOPS</h2>
+      <div className='shop-input-container'>
+        <p className='shop-search-text'>Search for your favourite shop</p>
         <input
+          className='shop-search-input'
           onChange={searchInput}
           value={searchValue}
           type='text'
           placeholder='Search...'
         />
-        <button type='submit'>Search</button>
-      </form>
-      <AddCardList item={filteredArr} onDelete={handleDelete} />
+      </div>
+      {loading ? (
+        <ClipLoader
+          color={'#A18A68'}
+          loading={loading}
+          cssOverride={override}
+          size={40}
+          aria-label='Loading Spinner'
+          data-testid='loader'
+        />
+      ) : (
+        <AddCardList item={filteredArr} onDelete={handleDelete} />
+      )}
+
+      {!isEmpty && (
+        <p className='shop-warning'>
+          There are no stores listed. We'll probably go bankrupt and we'll all
+          be fired. Help us!!!
+        </p>
+      )}
+
       <Feature />
     </div>
   );
