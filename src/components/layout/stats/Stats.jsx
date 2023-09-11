@@ -3,7 +3,7 @@ import './stats.scss';
 export default function Stats() {
   return (
     <div className='stat-container'>
-      <h2 className='stat-title'>Because you're worth it</h2>
+      <h2 className='stat-title'>Because you&apos;re worth it</h2>
       <p className='stat-subtitle'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, ullam?
       </p>
