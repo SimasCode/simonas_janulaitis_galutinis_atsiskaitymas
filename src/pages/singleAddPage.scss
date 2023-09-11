@@ -52,7 +52,7 @@
 
     .single-visit-button:hover {
         background-color: var(--gold);
-      }
+    }
 
     .icons-container{
         display: flex;
@@ -74,9 +74,7 @@
 
     .unlisted {
         list-style: none;
-    }    
-    
-    
+    }        
 }
 
 @media screen and (min-width:767px) {
@@ -96,6 +94,6 @@
             max-width: 50%;
             margin-bottom: 30px;        
         }
-}
+    }
 }
 
