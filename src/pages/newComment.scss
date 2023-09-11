@@ -17,8 +17,7 @@
 
       .new-comment-text-area {
         border: 1px solid var(--gold);
-        border-radius: 5px;
-        margin-bottom: 40px;
+        border-radius: 5px;        
      }
       
       input:focus, input:active {        
@@ -34,7 +33,13 @@
         font-size: 16px;        
         border: none; 
         cursor: pointer;       
-        letter-spacing: 1px;    
-        margin-bottom: 20px;
+        letter-spacing: 1px;
+        margin: 40px 0;
+    }
+
+    .new-comment-error {
+      color: var(--red);  
+      text-align: left;
+      margin-top: 10px;   
     }
 }

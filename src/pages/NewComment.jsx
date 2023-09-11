@@ -20,8 +20,8 @@ export default function NewComment() {
       name: '',
     },
     validationSchema: Yup.object({
-      newComment: Yup.string().min(2),
-      name: Yup.string().min(2),
+      newComment: Yup.string().min(2).required('This field is required.'),
+      name: Yup.string().min(2).required('This field is required.'),
     }),
     onSubmit: (values) => {
       const event = new Date();
@@ -40,6 +40,7 @@ export default function NewComment() {
       console.log('supildytos reiksmes ===', values);
       console.log('NAUJAS COMMENT ===', newCommentObj);
       sendDataToFirebase(newCommentObj);
+      formik.resetForm();
     },
   });
 
@@ -57,15 +58,6 @@ export default function NewComment() {
       toast.error('Something went wrong');
     }
   }
-  //TODO: įdėti data į naują komentarą, kad su nauju komentaru ateina ir data
-
-  const event = new Date();
-  const options = {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  };
-  const diena = event.toLocaleDateString('en-US', options);
 
   return (
     <div className='new-comment-container'>
@@ -81,8 +73,8 @@ export default function NewComment() {
           id='name'
           placeholder='Enter your name'
         />
-        {formik.errors.newComment && formik.touched.newComment && (
-          <p className=''>{formik.errors.newComment}</p>
+        {formik.errors.name && formik.touched.name && (
+          <p className='new-comment-error'>{formik.errors.name}</p>
         )}
 
         {/* NEW COMMENT */}
@@ -98,7 +90,7 @@ export default function NewComment() {
           cols='50'
         />
         {formik.errors.newComment && formik.touched.newComment && (
-          <p className=''>{formik.errors.newComment}</p>
+          <p className='new-comment-error'>{formik.errors.newComment}</p>
         )}
 
         <button className='new-comment-button' type='submit'>
