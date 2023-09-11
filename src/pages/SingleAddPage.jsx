@@ -7,7 +7,7 @@ import './singleAddPage.scss';
 import { AiFillHeart } from 'react-icons/ai';
 import { RxEnvelopeClosed } from 'react-icons/rx';
 import { BiLogoFacebook } from 'react-icons/bi';
-import { AiOutlineInstagram } from 'react-icons/ai';
+import { AiOutlineInstagram, AiFillStar } from 'react-icons/ai';
 import { AiOutlineTwitter } from 'react-icons/ai';
 import { ClipLoader } from 'react-spinners';
 
@@ -71,6 +71,15 @@ export default function SingleAddPage() {
 
             <div className='single-text-container'>
               <h2 className='single-shop-name'>{newObj.shopName}</h2>
+              <div className='single-shop-icons-container'>
+                <AiFillStar />
+                <AiFillStar />
+                <AiFillStar />
+                <AiFillStar />
+                <AiFillStar />
+              </div>
+              <p className='single-shop-town'>{newObj.town}</p>
+              <p className='single-shop-town'>Since {newObj.startYear}</p>
               <p className='single-description'> {newObj.description}</p>
               <a className='single-visit-button' href='/'>
                 Visit site

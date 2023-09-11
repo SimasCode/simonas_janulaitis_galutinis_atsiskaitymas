@@ -7,6 +7,7 @@ import Hero from '../components/layout/hero/Hero';
 import './shops.scss';
 import { toast } from 'react-hot-toast';
 import { ClipLoader } from 'react-spinners';
+import Stats from '../components/layout/stats/Stats';
 
 export default function Shops() {
   const [localArr, setLocalArr] = useState([]);
@@ -76,6 +77,7 @@ export default function Shops() {
   return (
     <div className='shop-container'>
       <Hero />
+      <Stats />
       <h2 className='shop-title'>OUR SHOPS</h2>
       <div className='shop-input-container'>
         <p className='shop-search-text'>Search for your favourite shop</p>
