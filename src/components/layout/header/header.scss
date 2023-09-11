@@ -54,10 +54,11 @@
       display: flex;
       flex-direction: column;
       position: absolute;
-      top: 50px;
+      top: 12%;
       right: 0;
       width: 100%;
-      background-color: var(--gold);    
+      background-color: var(--gold);       
+      z-index: 100; 
     }
   
     .nav-link-fragment{

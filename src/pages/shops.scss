@@ -42,7 +42,7 @@
       list-style: none;
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
       flex-wrap: wrap;
       gap: 16px;
       }
@@ -103,7 +103,7 @@
          margin-top: 40px;
          color: var(--red);
          font-size: 20px;
-      }
+      }     
 }
 
 @media screen and (min-width:767px) { 
@@ -116,7 +116,25 @@
 
       .shop-card-list { 
          margin-right: 100px;       
-         margin-left: 100px;         
+         margin-left: 100px;
+         display: flex;
+         flex-direction: row ;
+         justify-content: space-between;
+         // gap: 40px;
+              
       } 
-    }    
-}
+    }  
+   }  
+
+    @media screen and (min-width:850px) {
+      .shop-container { 
+
+         .shop-card-list { 
+            display: flex;
+            flex-direction: row ;
+            justify-content: left;
+            gap: 40px;
+
+      }
+    }
+   }

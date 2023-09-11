@@ -10,7 +10,7 @@ export default function Footer() {
           <h2>
             <span className='logo-block'>SHOPPY</span>.COM
           </h2>
-          <p className='footer-intro'>Worldwide shop since 2020. </p>
+          <p className='footer-intro'>Worldwide online shop since 2020. </p>
           <div className='footer-icons-container'>
             <BsFacebook />
             <BsTwitter />

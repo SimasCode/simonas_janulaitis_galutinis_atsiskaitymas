@@ -9,22 +9,22 @@ export default function Stats() {
       </p>
       <div className='stat-text-container'>
         <div className='stat-single-container'>
-          <h3>200+</h3>
+          <h3 className='stat-text-title'>200+</h3>
           <p className='stat-text'>Internetional Brands</p>
         </div>
         <div className='stat-div-line'></div>
         <div className='stat-single-container'>
-          <h3>2.000+</h3>
+          <h3 className='stat-text-title'>2.000+</h3>
           <p className='stat-text'>High Quality Products</p>
         </div>
         <div className='stat-div-line'></div>
         <div className='stat-single-container'>
-          <h3>30.000+</h3>
+          <h3 className='stat-text-title'>30.000+</h3>
           <p className='stat-text'>Happy Customers</p>
         </div>
         <div className='stat-div-line'></div>
         <div className='stat-single-container'>
-          <h3>5.000+</h3>
+          <h3 className='stat-text-title'>5.000+</h3>
           <p className='stat-text'>Discounts</p>
         </div>
       </div>

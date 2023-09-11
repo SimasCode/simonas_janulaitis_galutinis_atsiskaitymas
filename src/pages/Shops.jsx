@@ -89,25 +89,27 @@ export default function Shops() {
           placeholder='Search...'
         />
       </div>
-      {loading ? (
-        <ClipLoader
-          color={'#A18A68'}
-          loading={loading}
-          cssOverride={override}
-          size={40}
-          aria-label='Loading Spinner'
-          data-testid='loader'
-        />
-      ) : (
-        <AddCardList item={filteredArr} onDelete={handleDelete} />
-      )}
+      <div>
+        {loading ? (
+          <ClipLoader
+            color={'#A18A68'}
+            loading={loading}
+            cssOverride={override}
+            size={40}
+            aria-label='Loading Spinner'
+            data-testid='loader'
+          />
+        ) : (
+          <AddCardList item={filteredArr} onDelete={handleDelete} />
+        )}
 
-      {!isEmpty && (
-        <p className='shop-warning'>
-          There are no stores listed. We&apos;ll probably go bankrupt and
-          we&apos;ll all be fired. Help us!!!
-        </p>
-      )}
+        {!isEmpty && (
+          <p className='shop-warning'>
+            There are no stores listed. We&apos;ll probably go bankrupt and
+            we&apos;ll all be fired. Help us!!!
+          </p>
+        )}
+      </div>
 
       <Feature />
     </div>

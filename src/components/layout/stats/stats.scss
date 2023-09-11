@@ -13,7 +13,7 @@
 
     .stat-title {
         text-transform: uppercase;
-        font-size: 35px;
+        font-size: 25px;
         font-weight: 500;
         margin-bottom: 20px;
         text-align: center;
@@ -22,6 +22,7 @@
     .stat-subtitle {
         color: var(--gray70);
         text-align: center;
+        font-size: 16px;
         margin-bottom: 20px;
     }
 
@@ -33,6 +34,10 @@
 
     .stat-single-container {
         margin-bottom: 20px;
+    }
+
+    .stat-text-title {
+        font-size: 18px;
     }
 
     .stat-text {
@@ -59,6 +64,15 @@
             justify-content: space-between;
             gap: 40px;
             width: 100%;
+        }
+
+        .stat-title {            
+            font-size: 35px;                       
+        }
+    
+        .stat-subtitle {            
+            font-size: 18px;
+            margin-bottom: 20px;
         }
 
     }
