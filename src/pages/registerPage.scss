@@ -1,6 +1,9 @@
 .register-container {    
     width: 300px;
-    margin: 50px auto;   
+    height: 50vh; 
+    margin: 50px auto;  
+    margin-top: 100px;
+    margin-bottom: 40px;
 
     .register-title {        
         color: var(--black);
@@ -67,7 +70,7 @@
     }
 }
 
-@media (min-width:767px) {
+@media screen and (min-width:767px) {
     .register-container {
         width: 500px; 
     }

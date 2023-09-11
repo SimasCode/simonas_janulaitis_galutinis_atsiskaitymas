@@ -5,6 +5,7 @@ const AuthContext = createContext({
   email: '',
   isUserLoggedIn: '',
   userUid: '',
+  accDate: '',
 });
 
 export default function AuthProvider(props) {
@@ -13,11 +14,13 @@ export default function AuthProvider(props) {
   const email = fireUser.email;
   const userUid = fireUser.uid;
   let isUserLoggedIn = !!email;
+  const accDate = fireUser.metadata;
 
   const ctx = {
     email: email,
     isUserLoggedIn: isUserLoggedIn,
     userUid: userUid,
+    accDate: accDate,
   };
 
   useEffect(() => {

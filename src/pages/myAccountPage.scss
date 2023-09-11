@@ -1,0 +1,47 @@
+.account-container { 
+    display: flex; 
+    flex-direction: column;  
+    margin-top: 100px;
+    margin-bottom: 50px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50vh;
+   
+
+    .account-title {
+        color: var(--black);
+        text-align: center;
+        font-weight: 500;       
+        font-size: 30px;
+        margin-bottom: 60px;
+    }
+
+    .account-text{
+        text-align: left;
+        color: var(--gray70);
+        margin-bottom: 40px;
+        border-bottom: 1px solid var(--gold);
+        
+    }
+
+    .account-icon-green {
+        color: green;
+    }
+
+    .account-icon-red {
+        color: red;
+    }
+
+    .account-icon-container {
+        display: flex;
+        color: var(--gray70);
+        border-bottom: 1px solid var(--gold);
+    }
+}
+
+@media screen and (min-width:767px) {
+    .account-container {
+        width: 500px; 
+    }
+  }
