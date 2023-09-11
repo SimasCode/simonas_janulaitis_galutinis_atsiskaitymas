@@ -9,8 +9,8 @@ export default function SingleAddCard(props) {
     <li
       className={
         userUid === ctx.userUid
-          ? 'shop-card-container user-border'
-          : 'shop-card-container'
+          ? 'shop-card-container user-border-golden'
+          : 'shop-card-container user-border-black'
       }
     >
       <img className='shop-image' src={imageUrl} alt={`${shopName}-image`} />
@@ -18,14 +18,20 @@ export default function SingleAddCard(props) {
       <p className='shop-name'>{shopName}</p>
 
       <div className='shop-buttons-container'>
-        <Link className='shop-button shop-read-button' to={`/adds/${id}`}>
+        <Link className='shop-button shop-button-read' to={`/adds/${id}`}>
           Read more
         </Link>
-        {userUid === ctx.userUid && (
-          <button className='shop-button' onClick={props.onDelete}>
-            Delete
-          </button>
-        )}
+
+        <button
+          className={
+            userUid === ctx.userUid
+              ? 'shop-button-delete'
+              : 'shop-button-disabled'
+          }
+          onClick={props.onDelete}
+        >
+          Delete
+        </button>
       </div>
     </li>
   );

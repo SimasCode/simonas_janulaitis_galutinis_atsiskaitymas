@@ -91,7 +91,7 @@ export default function SingleAddPage() {
                   size={23}
                 />
                 <span>|</span>
-                {/* TODO: padaryti, kad iconos veiktų kaip nuorodos*/}
+
                 <RxEnvelopeClosed className='icon-link' size={23} />
                 <BiLogoFacebook className='icon-link' size={23} />
                 <AiOutlineInstagram className='icon-link' size={23} />
@@ -102,7 +102,6 @@ export default function SingleAddPage() {
         )}
       </div>
 
-      {/* TODO: padaryti, kad iš vartotojų gautume RATING*/}
       <div className='single-comments-container'>
         <h2>Rating & Reviews</h2>
         <hr />

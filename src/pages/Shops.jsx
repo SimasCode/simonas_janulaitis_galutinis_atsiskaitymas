@@ -35,7 +35,7 @@ export default function Shops() {
       // setLoading(false);
       setTimeout(() => {
         setLoading(false);
-      }, 2000);
+      }, 1000);
     } catch (error) {
       console.log('getDataFromFirestore error ===', error);
     }
@@ -103,7 +103,7 @@ export default function Shops() {
           <AddCardList item={filteredArr} onDelete={handleDelete} />
         )}
 
-        {!isEmpty && (
+        {!isEmpty && !loading && (
           <p className='shop-warning'>
             There are no stores listed. We&apos;ll probably go bankrupt and
             we&apos;ll all be fired. Help us!!!

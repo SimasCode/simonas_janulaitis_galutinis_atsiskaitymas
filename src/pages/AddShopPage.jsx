@@ -16,7 +16,7 @@ export default function AddShopPage() {
       town: '',
       startYear: '',
       description: '',
-      imageUrl: 'https://picsum.photos/id/20/300/300',
+      imageUrl: 'https://i.dummyjson.com/data/products/26/thumbnail.jpg',
     },
     validationSchema: Yup.object({
       shopName: Yup.string()
@@ -55,7 +55,7 @@ export default function AddShopPage() {
       toast.success('Successfully created add');
     } catch (error) {
       console.error('Error adding document: ', error);
-      toast.error('something went wrong');
+      toast.error('Something went wrong');
     }
   }
 

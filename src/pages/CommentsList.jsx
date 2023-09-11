@@ -60,7 +60,7 @@ export default function CommentsList() {
   function handleSort() {
     const ArrCopy = [...commentObj];
     ArrCopy.sort((aObj, bObj) =>
-      bObj[selectValue].toString().localeCompare(aObj[selectValue].toString())
+      aObj[selectValue].toString().localeCompare(bObj[selectValue].toString())
     );
     setCommentObj(ArrCopy);
   }
