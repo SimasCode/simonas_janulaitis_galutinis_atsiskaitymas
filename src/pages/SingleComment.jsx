@@ -3,6 +3,7 @@ import { db } from '../firebase/firebase';
 import './singleComment.scss';
 import { AiFillStar } from 'react-icons/ai';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 
 export default function SingleComment(props) {
   const { id, title, name, userUid, date } = props.item;
@@ -16,6 +17,7 @@ export default function SingleComment(props) {
     console.log('idToDelete ===', idToDelete);
     try {
       await deleteDoc(doc(db, 'adds', params.addId, 'comments', idToDelete));
+      toast.success('Deleted successfully');
     } catch (error) {
       console.log('error ===', error);
     }

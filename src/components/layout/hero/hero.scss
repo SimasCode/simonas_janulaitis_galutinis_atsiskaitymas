@@ -30,7 +30,7 @@
 
     .hero-left-arrow {
         position: absolute;
-        top: 50%;
+        top: 60%;
         transform: translate(0, 0);
         left: 5%;        
         cursor: pointer; 
@@ -38,7 +38,7 @@
 
     .hero-right-arrow {
         position: absolute;
-        top: 50%;
+        top: 60%;
         transform: translate(0, 0);
         right: 5%;
         z-index: 1;
@@ -88,6 +88,24 @@
             left: 35%;
             transform: translate(-50%, -50%);
         }
+
+        .hero-left-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, 0);
+            left: 5%;        
+            cursor: pointer; 
+    }
+
+        .hero-right-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, 0);
+            right: 5%;
+            z-index: 1;
+            cursor: pointer;
+        }
+
         
     }
 }

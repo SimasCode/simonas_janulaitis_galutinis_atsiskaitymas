@@ -105,8 +105,8 @@ export default function Shops() {
 
         {!isEmpty && !loading && (
           <p className='shop-warning'>
-            There are no stores listed. We&apos;ll probably go bankrupt and
-            we&apos;ll all be fired. Help us!!!
+            There are no stores listed. We&apos;ll probably go bankrupt and we
+            all be fired. Help us!!!
           </p>
         )}
       </div>
