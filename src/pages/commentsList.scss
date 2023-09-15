@@ -1,0 +1,47 @@
+.comments-container {
+    display: grid;    
+    gap: 80px;
+    padding: 0;
+    margin-top: 40px;
+
+    .comment-ul {
+        padding: 0;
+    }  
+    
+    .comment-button {
+        width: 20%;
+        background-color: var(--black);
+        color: var(--white);
+        padding: 8px 0;
+        font-weight: 500;
+        font-size: 16px;        
+        border: none; 
+        cursor: pointer;       
+        letter-spacing: 1px;    
+        margin-bottom: 20px;
+    }
+
+    .comment-select {
+        margin-right: 40px;
+        margin-bottom: 40px;
+        padding: 7.5px;
+    }
+
+    .comment-sort-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .comment-title{
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (min-width:767px) {
+    .comments-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+}

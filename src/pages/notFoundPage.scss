@@ -1,0 +1,37 @@
+.not-container{
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 150px 100px;
+
+    .not-title{
+        color: var(--black);
+        font-size: 30px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+    }
+
+    .not-text{
+        color: var(--gray70);
+        font-size: 20px;
+    }
+
+    .not-link{
+        color: var(--black);
+        font-weight: 700;
+        margin-top: 64px;
+        text-decoration: none;
+        text-transform: uppercase;
+        border: 1px solid var(--black);
+        border-radius: 4px;
+        padding: 16px 32px;
+    }
+
+    .not-link:hover{
+        color: var(--gold);
+        border: 1px solid var(--gold);
+    }
+}

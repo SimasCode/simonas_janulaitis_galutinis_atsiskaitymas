@@ -1,0 +1,181 @@
+.shop-container {
+        
+   .shop-title {
+      font-size: 35px;
+      text-align: center;
+      margin-bottom: 50px;
+      font-weight: 500;
+    } 
+
+    .shop-input-container {
+      margin-right: 32px;
+      margin-left: 32px;
+      background-color: var(--gold);
+      padding: 30px 0 40px 0;
+    }
+
+    .shop-search-text {
+      text-align: center;
+      color: var(--white); 
+      margin-bottom: 20px;    
+   }
+
+   .shop-search-input {
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+      min-width: 30%;
+      font-size: 16px;
+      padding: 12px 0 0 0;
+      border: none;
+      border-bottom: 1px solid var(--gold);      
+      } 
+
+   input:focus, input:active {        
+      outline: none;    
+      }
+
+   .shop-card-list {
+      padding: 0;
+      margin-left: 32px;
+      margin-right: 32px;
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      }
+
+   .shop-card-container {       
+        margin-top: 60px;
+        width: 280px;
+        margin-bottom: 32px;
+     }
+
+     .shop-image {
+        height: 200px;
+        width: 100%;
+     }
+
+     .shop-name {
+        color: var(--gold);
+        font-size: 20px;
+        margin: 16px 0;
+        text-align: center;
+     }
+
+     .shop-buttons-container {
+        display: flex;
+        flex-direction: column;
+     }
+
+     .shop-button {
+         width: 100%;
+         background-color: var(--black);
+         color: var(--white);
+         padding: 16px 0;
+         font-weight: 500;
+         font-size: 16px;  
+         border: none; 
+         cursor: pointer;        
+         letter-spacing: 1px;
+         text-decoration: none;
+         text-transform: uppercase;
+         text-align: center;      
+     }
+
+     .shop-button:hover{
+      background-color: var(--gold);
+     }
+
+     .shop-button-read {
+      // margin-bottom: 20px;
+     }
+
+     .shop-button-delete {
+         width: 100%;
+         background-color: var(--black);
+         color: var(--white);
+         padding: 16px 0;
+         font-weight: 500;
+         font-size: 16px;  
+         border: none; 
+         cursor: pointer;        
+         letter-spacing: 1px;
+         text-decoration: none;
+         text-transform: uppercase;
+         text-align: center; 
+         margin-top: 20px;                      
+      } 
+      
+      .shop-button-delete:hover {
+         background-color: var(--gold);
+      }
+
+      .shop-button-disabled {          
+         width: 100%;
+         background-color: var(--gray70);
+         color: var(--white);
+         padding: 16px 0;
+         font-weight: 500;
+         font-size: 16px;  
+         border: none; 
+         cursor: pointer;        
+         letter-spacing: 1px;
+         text-decoration: none;
+         text-transform: uppercase;
+         text-align: center; 
+         margin-top: 20px;                         
+      }
+
+      .user-border-golden{
+         border: 3px solid var(--gold);
+         margin-bottom: -20px;
+      }
+
+      .user-border-black{
+         border: 3px solid var(--black);
+         margin-bottom: -20px;
+      }
+
+      .shop-warning {
+         text-align: center;
+         margin-top: 100px;
+         color: var(--red);
+         font-size: 20px;
+      }     
+}
+
+@media screen and (min-width:767px) { 
+    .shop-container { 
+      
+      .shop-input-container {
+         margin-right: 100px;
+         margin-left: 100px;
+       }
+
+      .shop-card-list { 
+         margin-right: 100px;       
+         margin-left: 100px;
+         display: flex;
+         flex-direction: row ;
+         justify-content: space-between;
+         // gap: 40px;
+              
+      } 
+    }  
+   }  
+
+    @media screen and (min-width:850px) {
+      .shop-container { 
+
+         .shop-card-list { 
+            display: flex;
+            flex-direction: row ;
+            justify-content: left;
+            gap: 40px;
+
+      }
+    }
+   }

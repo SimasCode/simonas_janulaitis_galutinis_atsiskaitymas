@@ -1,0 +1,136 @@
+.hero-container {    
+    margin: 50px 32px;      
+    display: flex;   
+    justify-content: center;
+    position: relative; 
+    background-size: cover;     
+
+    .hero-image{
+        height: auto;
+        width: 100%;       
+    }
+
+    .hero-text-container {
+        position: absolute;
+        top: 40%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+    }
+
+    .hero-title {
+        color: var(--black);
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .hero-subtitle{
+        color: var(--gold);
+        font-size: 8px;        
+    }
+
+    .hero-left-arrow {
+        position: absolute;
+        top: 60%;
+        transform: translate(0, 0);
+        left: 5%;        
+        cursor: pointer; 
+    }
+
+    .hero-right-arrow {
+        position: absolute;
+        top: 60%;
+        transform: translate(0, 0);
+        right: 5%;
+        z-index: 1;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width:400px) {
+    .hero-container {
+
+        .hero-title {
+            color: var(--black);
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .hero-subtitle{
+            color: var(--gold);
+            font-size: 10px;        
+        }
+    }
+}
+
+@media screen and (min-width:600px) {
+    .hero-container {
+
+        .hero-title {
+            color: var(--black);
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .hero-subtitle{
+            color: var(--gold);
+            font-size: 12px;        
+        }
+    }
+}
+
+@media screen and (min-width:767px) {
+    .hero-container {
+        margin: 50px 100px;
+        
+        .hero-text-container {
+            position: absolute;
+            top: 40%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero-left-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, 0);
+            left: 5%;        
+            cursor: pointer; 
+    }
+
+        .hero-right-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, 0);
+            right: 5%;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .hero-container {      
+        
+        .hero-text-container {
+            position: absolute;
+            top: 40%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+        }      
+    
+        .hero-title {
+            color: var(--black);
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .hero-subtitle{
+            color: var(--gold);
+            font-size: 14px;        
+        }
+        
+    }
+
+}

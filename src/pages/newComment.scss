@@ -1,0 +1,45 @@
+.new-comment-container {
+
+    .new-comment-title {
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+
+    .new-comment-input {
+        display: block;
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 0 0 0;
+        border: none;
+        border-bottom: 1px solid var(--gold);
+        margin-top: 40px; 
+      } 
+
+      .new-comment-text-area {
+        border: 1px solid var(--gold);
+        border-radius: 5px;        
+     }
+      
+      input:focus, input:active {        
+        outline: none;    
+     }
+
+     .new-comment-button {
+        width: 20%;
+        background-color: var(--black);
+        color: var(--white);
+        padding: 8px 0;
+        font-weight: 500;
+        font-size: 16px;        
+        border: none; 
+        cursor: pointer;       
+        letter-spacing: 1px;
+        margin: 40px 0;
+    }
+
+    .new-comment-error {
+      color: var(--red);  
+      text-align: left;
+      margin-top: 10px;   
+    }
+}
