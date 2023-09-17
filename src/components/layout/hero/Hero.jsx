@@ -21,7 +21,7 @@ export default function Hero() {
     },
     {
       id: 4,
-      link: '../images/hero-images/hero-image4.png',
+      link: '../images/hero-images/hero-image4.jpg',
       title: 'hero-image4',
     },
   ];
