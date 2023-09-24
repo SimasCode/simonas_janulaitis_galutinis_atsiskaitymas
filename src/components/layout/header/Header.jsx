@@ -9,7 +9,7 @@ export default function Header() {
       <Link className='header-logo'>
         <span className='header-logo-block'>SHOPPY</span>.COM
       </Link>
-      <div className='nav-bar'>
+      <div>
         <MobileNavigation />
         <Navigation />
       </div>
