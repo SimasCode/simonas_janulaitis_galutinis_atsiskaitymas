@@ -10,8 +10,8 @@ import { NavLink } from 'react-router-dom';
 export default function LoginForm() {
   const formik = useFormik({
     initialValues: {
-      email: 'mario@puzo.com', //james@bond.com
-      password: '123456', // 123456
+      email: '', //james@bond.com
+      password: '', // 123456
     },
     validationSchema: Yup.object({
       email: Yup.string()
@@ -47,6 +47,9 @@ export default function LoginForm() {
     <div className='container login-container'>
       <form onSubmit={formik.handleSubmit} className='login-form'>
         <h2 className='login-title'>Login Here</h2>
+        <p>FOR TEST REASONS</p>
+        <p>Email: mario@puzo.com || james@bond.com || labas@labas.com</p>
+        <p>Password: 123456</p>
         <input
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
