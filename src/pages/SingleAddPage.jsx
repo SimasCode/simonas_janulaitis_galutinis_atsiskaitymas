@@ -17,7 +17,6 @@ export default function SingleAddPage() {
   const [loading, setLoading] = useState(true);
 
   const params = useParams();
-  console.log('params ===', params);
 
   async function getDocFromFire() {
     try {
@@ -25,9 +24,8 @@ export default function SingleAddPage() {
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
-        console.log('Document data:', docSnap.data());
+        // console.log('Document data:', docSnap.data());
         setNewObj(docSnap.data());
-        console.log('newObj ===', newObj);
 
         setTimeout(() => {
           setLoading(false);

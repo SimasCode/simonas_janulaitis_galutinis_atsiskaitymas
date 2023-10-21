@@ -13,7 +13,6 @@ export default function Shops() {
   const [localArr, setLocalArr] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [loading, setLoading] = useState(false);
-  console.log('localArr ===', localArr);
 
   const isEmpty = !!localArr.length;
 
@@ -62,7 +61,6 @@ export default function Shops() {
 
   function searchInput(event) {
     setSearchValue(event.target.value);
-    console.log('searchValue ===', searchValue);
   }
 
   const filteredArr = localArr.filter((item) =>

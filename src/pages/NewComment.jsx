@@ -12,7 +12,6 @@ export default function NewComment() {
   const { userUid } = ctx;
 
   const params = useParams();
-  console.log('params ===', params);
 
   const formik = useFormik({
     initialValues: {
@@ -37,21 +36,19 @@ export default function NewComment() {
         name: values.name,
         date: diena,
       };
-      console.log('supildytos reiksmes ===', values);
-      console.log('NAUJAS COMMENT ===', newCommentObj);
+
       sendDataToFirebase(newCommentObj);
       formik.resetForm();
     },
   });
 
   async function sendDataToFirebase(dataToSend) {
-    console.log('creating');
     try {
       const docRef = await addDoc(
         collection(db, 'adds', params.addId, 'comments'),
         dataToSend
       );
-      console.log('Document written with ID: ', docRef.id);
+
       toast.success('Successfully created review');
     } catch (error) {
       console.error('Error adding document: ', error);

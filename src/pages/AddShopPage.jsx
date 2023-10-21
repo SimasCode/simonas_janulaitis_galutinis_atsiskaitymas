@@ -37,21 +37,18 @@ export default function AddShopPage() {
       imageUrl: Yup.string().trim().min(5).required('This field is required.'),
     }),
     onSubmit: (values) => {
-      console.log('supildytos reiksmes ===', values);
       const newAddWithUserUid = {
         ...values,
         userUid: userUid,
       };
-      console.log('newAddWithUserUid ===', newAddWithUserUid);
+
       sendDataToFirebase(newAddWithUserUid);
     },
   });
 
   async function sendDataToFirebase(dataToSend) {
-    console.log('creating');
     try {
       const docRef = await addDoc(collection(db, 'adds'), dataToSend);
-      console.log('Document written with ID: ', docRef.id);
       toast.success('Successfully created add');
     } catch (error) {
       console.error('Error adding document: ', error);

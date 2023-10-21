@@ -9,7 +9,6 @@ export default function FacebookLogin(props) {
       .then((result) => {
         // The signed-in user info.
         const user = result.user;
-        console.log('user ===', user);
         console.log('FacebookAuth - pavyko');
         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
         const credential = FacebookAuthProvider.credentialFromResult(result);
@@ -19,7 +18,6 @@ export default function FacebookLogin(props) {
         // IdP data available using getAdditionalUserInfo(result)
       })
       .catch((error) => {
-        console.log('error ===', error);
         console.log('FacebookAuth - NEpavyko');
         // Handle Errors here.
         const errorCode = error.code;
@@ -28,7 +26,6 @@ export default function FacebookLogin(props) {
         const email = error.customData.email;
         // The AuthCredential type that was used.
         const credential = FacebookAuthProvider.credentialFromError(error);
-        console.log('credential ===', credential);
       });
   }
 

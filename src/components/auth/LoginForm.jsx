@@ -20,7 +20,6 @@ export default function LoginForm() {
       password: Yup.string().min(4).max(255).required('Required Field.'),
     }),
     onSubmit: (values) => {
-      console.log('Supildytos reiksmes ===', values);
       loginWithFire(values.email, values.password);
     },
   });
@@ -33,7 +32,6 @@ export default function LoginForm() {
         // Signed in
         const user = userCredential.user;
         // ...
-        console.log('user login ok ===', user);
       })
       .catch((error) => {
         toast.error('Login failed, check email or password');

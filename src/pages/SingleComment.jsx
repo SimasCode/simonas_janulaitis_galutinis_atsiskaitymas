@@ -6,15 +6,11 @@ import { useParams } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 
 export default function SingleComment(props) {
-  const { id, title, name, userUid, date } = props.item;
-  console.log('id ===', id);
-  console.log('userUid ===', userUid);
+  const { id, title, name, date } = props.item;
 
   const params = useParams();
-  console.log('params ===', params);
 
   async function handleDelete(idToDelete) {
-    console.log('idToDelete ===', idToDelete);
     try {
       await deleteDoc(doc(db, 'adds', params.addId, 'comments', idToDelete));
       toast.success('Deleted successfully');

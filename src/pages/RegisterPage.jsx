@@ -30,14 +30,11 @@ export default function RegisterPage() {
         .required('Required Field.'),
     }),
     onSubmit: (values) => {
-      console.log('values ===', values);
       handleLogin(values);
     },
   });
 
   function handleLogin(userCredential) {
-    console.log('userCredential ===', userCredential);
-
     if (formik.values.password !== formik.values.repeatPassword) {
       console.log('Password dont match');
       return setErrorMessage('Your password dont match.');
